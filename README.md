@@ -74,7 +74,7 @@ In your route, you can check `res.locals.errors` and render the page again with 
 
 ### Security
 
-CSRF Protection: CSRF protection is provided with the `csrf-csrf` npm package. This implements the [double-submit cookie pattern](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#double-submit-cookie). A cookie with a CSRF token and hash is provided in the cookie, and you should send the CSRF token in the form body (you can use a hidden field). This should be done on any action such as `POST`, `DELETE`, `PUT`, AND `PATCH`.
+CSRF Protection: CSRF protection is provided with the `csrf-csrf` npm package. This implements the [double-submit cookie pattern](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#double-submit-cookie). A cookie with a CSRF token and hash is provided in the cookie, and you should send the CSRF token in the form body (you can use a hidden field). This should be done on any action such as `POST`, `DELETE`, `PUT` and `PATCH`.
 
 Helmet: Helmet helps secure Express apps by setting HTTP response headers. The default settings are applied, but you should configure the settings to meet the app's security needs and requirements. You can find more information by clicking [here](https://www.npmjs.com/package/helmet).
 
