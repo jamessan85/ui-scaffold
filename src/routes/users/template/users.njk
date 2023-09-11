@@ -1,0 +1,34 @@
+{% extends "../../../views/template.njk" %}
+
+{% block main %}
+    <h1>{{ __("users.h1" ) }}</h1>
+    <form method="post">
+        {{ input({
+        id: "name",
+        name: "name",
+        label: {
+            text: "Label text"
+        },
+        hint: {
+            text: "Hint text"
+        },
+        value: "",
+        errorMessage: {
+            text: errors.fields.name 
+        } if errors.fields.name
+    }) }}
+
+        {{ input({
+        id: "csrfToken",
+        name: "csrfToken",
+        value: csrfToken,
+        type: "hidden"
+    }) }}
+
+        {{ button({
+        text: "Submit"
+    }) }}
+
+    </form>
+
+{% endblock %}
