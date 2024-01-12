@@ -17,6 +17,7 @@ const configureCSRF = (app: express.Application) => {
   app.use(doubleCsrfProtection);
   app.use((req, res, next) => {
     res.locals.csrfToken = generateToken(req, res);
+
     next();
   });
 };

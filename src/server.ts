@@ -47,7 +47,6 @@ const start = (application: express.Application) => {
 
   // any other unhandled errors
   application.use(
-    errorLogger,
     // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
     (err: any, req: Request, res: Response, _next: NextFunction) => {
       res.status(500).render(path.join(__dirname, '/views/error.njk'), {
@@ -58,11 +57,13 @@ const start = (application: express.Application) => {
       });
     }
   );
+
   if (config.nodeEnv !== 'test') {
     application.listen(config.port, () => {
       console.log(`Server started listening on ${config.port}`);
     });
   }
+
   return application;
 };
 

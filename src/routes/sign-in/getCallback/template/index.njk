@@ -1,0 +1,12 @@
+{% extends "../../../../views/template.njk" %}
+
+{% block main %}
+    {% if error === true %}
+        <p>Error logging in<p>
+                <a href="/sign-in">back to sign-in</a>
+            {% else %}
+                <h1> Successful Login</h1>
+                <h2> User Data </h2>
+                <pre>{{ userData }}</pre>
+            {% endif %}
+        {% endblock %}}

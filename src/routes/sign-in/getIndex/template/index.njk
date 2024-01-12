@@ -1,0 +1,9 @@
+{% extends "../../../../views/template.njk" %}
+
+{% block main %}
+    <h1>Sign In</h1>
+
+    <a href="https://am.nhsdev.auth-ptl.cis2.spineservices.nhs.uk:443/openam/oauth2/realms/root/realms/oidc/authorize
+?response_type=code&scope=openid%20profile&client_id=356926218026.apps.supplier&state=af0ifjsldkj&redirect_uri=http://localhost:3000/sign-in/callback">Sign in to CIS2</a>
+
+{% endblock %}

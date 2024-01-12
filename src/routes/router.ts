@@ -1,15 +1,10 @@
 import app from 'express';
 import indexGet from './index/get';
-import usersValidator from './users/validator/usersValidator';
-import validateSchema from '../validator/validateSchema';
-import userGet from './users/get';
-import userPost from './users/post';
+import signInRoutes from './sign-in/index';
 
 const router = app.Router();
 
 router.get('/', indexGet);
-
-router.get('/users', userGet);
-router.post('/users', usersValidator, validateSchema, userPost);
+router.use('/sign-in', signInRoutes);
 
 export default router;
